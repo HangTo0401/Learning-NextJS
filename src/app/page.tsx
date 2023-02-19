@@ -1,23 +1,16 @@
-"use client";
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const router = useRouter();
+  const router = useRouter()
 
   function goToDetailPage() {
-    router.push({
-      pathname: '/posts/[postId]',
-      query: {
-      postId: '123',
-      ref: 'social',
-      },
-    })
+    router.push('/posts/12345?ref=social')
   }
 
   return (

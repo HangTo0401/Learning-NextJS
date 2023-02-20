@@ -34,9 +34,13 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
   }
 }
 
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
-      paths: [], //indicates that no page needs be created at build time
-      fallback: 'blocking' //indicates the type of fallback
+    paths: [
+      { params: { postId: '1' } },
+      { params: { postId: '2' } },
+      { params: { postId: '3' } },
+      ], // indicates that no page needs be created at build time
+    fallback: 'blocking' // or true or 'blocking'
   }
 }
